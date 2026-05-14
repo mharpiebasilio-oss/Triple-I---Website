@@ -1,190 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <!-- =========================================
+            META / LINKS
+    ========================================== -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
     <title>Document</title>
+
     <style>
 
-        
-        .navibar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #e5d3c1;
-            color: white;
-            padding: 15px;
+        /* =========================================
+            GLOBAL
+        ========================================== */
+
+        body {
+            margin: 0;
+            background: #EEE8DC;
+            font-family: sans-serif;
+            font-size: 1rem;
+            max-width: 99.4%;
         }
+
         a {
-            color: #7D5842;
+            color: #0F0F0F;
             text-decoration: none;
         }
-        #NB1{
-            border: 1px solid #7D5842;
-            border-radius: 10px;
-            padding: 5px 10px;
-            margin-right: 10px;
-        }
-        .navibar1 :hover{
-            
-            color: white;
-            
-        }
-        .navibar2 a:hover{
-            background: #7D5842;
-            color: white;
-            border-radius: 10px;
-            transition: 0.25s;
-        }
-        .navibar3{
-            border: none;
-            padding: 5px 10px;
-            background: none;}
-        .navibar3:hover{
-            background: #7D5842;
-            color: white;
-            border-radius: 10px;
-            transition: 0.25s;
-            body {
-                margin: 0;
-            }
 
+        ::-webkit-scrollbar {
+            display: none;
         }
 
-        /* Top section */
-        .top {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 150px;
-            
-            margin-bottom: 5%;
-        }
-
-        .nav_container ul{
-            list-style-type: none;
-            background-color:antiquewhite ;
-            padding: 0px;
-            margin: 0px;
-            overflow: hidden;
-        }
-
-        .navbar {
-            display: grid;
-            grid-template-columns: repeat(6, 100px); 
-            grid-auto-rows: auto;
-            max-width: 100%; 
-            margin: 0 auto;
-            gap: 20px;
-        }
-
-        .navbar a {
-            color: black;
-            text-decoration: none;
-            padding: 15px;
+        .show {
             display: block;
-            text-align: center;
-            
         }
-        .navbar a:hover {
-            background-color: black;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-        .navbar li {
-            
-            overflow-x: auto;
 
+        .hidden {
+            display: none;
         }
+
         main {
             margin-left: 10px;
             margin-right: 10px;
         }
 
-        /* BOttom section */
-        .bottom {
-            display: flex; /* makes children horizontal */
+        /* =========================================
+            TOP NAVBAR
+        ========================================== */
+
+        .navibar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: #E8E0D5;
+            color: white;
+
+            padding: 15px;
+        }
+
+        .navibar1 :hover {
+            color: white;
+        }
+
+        .navibar2 a:hover {
+            background: #0F0F0F;
+            color: white;
+
+            border-radius: 10px;
+
+            transition: 0.25s;
+        }
+
+        .navibar3 {
+            border: none;
+            background: none;
+
+            width: 29px;
+            height: 30px;
+
+            border-radius: 50%;
+        }
+
+        .navibar3:hover {
+            background: #0F0F0F;
+            color: white;
+
+            transition: 0.25s;
+        }
+
+        #NB1 {
+            border: 1px solid #0F0F0F;
+            border-radius: 10px;
+
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+
+        /* =========================================
+            PAGE TITLE
+        ========================================== */
+
+        .top {
+            display: flex;
             justify-content: center;
             align-items: center;
+
+            height: 150px;
+
+            margin-bottom: 5%;
+        }
+
+        /* =========================================
+            CATEGORY NAVIGATION
+        ========================================== */
+
+        .nav_container ul {
+            list-style-type: none;
+
+            background-color: E3CEBA;
+
+            padding: 0px;
+            margin: 0px;
+
+            overflow: hidden;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            flex: 1 1 200px;
+        }
+
+        .navbar li {
+            overflow-x: auto;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+
+            padding: 15px;
+
+            display: block;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: black;
+            color: white;
+
+            transition: background-color 0.3s ease;
+        }
+
+        /* =========================================
+            DEVICE SECTION
+        ========================================== */
+
+        .bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             background-image: url(.png);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            margin-top: 5px;
+            margin-bottom: 5rem;
         }
 
         .box {
             display: flex;
             justify-content: center;
             align-items: center;
+
             height: 450px;
-            border: 1px solid black;
             width: 250px;
+
+            border: 1px solid black;
         }
+
         .box:hover {
-            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-            color: white; /* change text color to white for better visibility */
-            transition: background-color 0.3s ease; /* smooth transition */
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+
+            transition: background-color 0.3s ease;
+
             cursor: pointer;
         }
-        
-        
-        #Dev1, #Dev2, #Dev3 {
+
+        /* =========================================
+            DEVICE BOX IMAGES
+        ========================================== */
+
+        #Dev1,
+        #Dev2,
+        #Dev3 {
+
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            
+
+            transition-duration: .2s;
+            transition-delay: .1s;
+        }
+
+        #Dev1:hover,
+        #Dev2:hover,
+        #Dev3:hover {
+
+            position: inherit;
+
+            padding: 2.5em;
+
+            transition: ease-in-out;
+            transition-duration: .5s;
+        }
+
+        #Dev1:not(:hover),
+        #Dev2:not(:hover),
+        #Dev3:not(:hover) {
+
+            transition: ease-in-out;
+            transition-duration: .9s;
         }
 
         #Dev1 {
-            background-image: url(SurveyQR_2000x2000.png);
+            background-image: url(code.png);
         }
+
         #Dev2 {
-            margin: 0 5% ; /* adds horizontal margin to the middle box */
-            background-image: url(SurveyQR_2000x2000.png);
+            margin: 0 5%;
+            background-image: url(code.png);
         }
+
         #Dev3 {
-            background-image: url(SurveyQR_2000x2000.png);
+            background-image: url(code.png);
         }
+
+        /* =========================================
+            QR POPUP
+        ========================================== */
+
+        #QR-popup {
+
+            position: fixed;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background: white;
+
+            padding: 120px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+            z-index: 10;
+
+            background-image: url(SurveyQR_2000x2000.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
     </style>
+
 </head>
+
 <body>
-    <div class="navibar" >
-        <div class="navibar1"><a href="MainPage.html">E-Waste Hub PH</a></div>
-        <div class="navibar2"><a href="LoginPage.html" id="NB1">Sign Up <i class="fa-regular fa-user"></i></a>
-        <button onclick="AlertSetting()" class="navibar3"><i class="fa-solid fa-gear"></i></button></div>
+
+    <!-- =========================================
+            TOP NAVBAR
+    ========================================== -->
+
+    <div class="navibar">
+
+        <div class="navibar1">
+
+            <a href="MainPage.html">
+                E-Waste Hub PH
+            </a>
+
+        </div>
+
+        <div class="navibar2">
+
+            <a href="LoginPage.html" id="NB1">
+                Sign Up
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <button onclick="AlertSetting()" class="navibar3">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+
+        </div>
+
     </div>
-    <!-- TOP DIV -->
+
+    <!-- =========================================
+            PAGE TITLE
+    ========================================== -->
+
     <div class="top">
-        Mobile Devices
+
+        <h1>IT & Telecommunications</h1>
+
     </div>
+
+    <!-- =========================================
+            CATEGORY NAVIGATION
+    ========================================== -->
 
     <div class="nav_container">
 
         <nav class="navbar">
+
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+
+                <li class="highlight">
+                    <a href="IT_TelecommunicationsPage.html">
+                        IT & Telecommunications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ConsumerElectronics.html">
+                        Consumer Electronics
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ScreensMonitorsPage.html">
+                        Screens & Monitors
+                    </a>
+                </li>
+
+                <li>
+                    <a href="SmallAppliances.html">
+                        Small Appliances
+                    </a>
+                </li>
+
+                <li>
+                    <a href="LargeAppliances.html">
+                        Large Appliances
+                    </a>
+                </li>
+
+                <li>
+                    <a href="LightingEquipment.html">
+                        Lighting Equipment
+                    </a>
+                </li>
+
             </ul>
+
         </nav>
 
+        <!-- =========================================
+                MAIN TEXT
+        ========================================== -->
+
         <main>
+
             <h3>This is the Homepage</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, nesciunt error cupiditate nemo illo minima, facere expedita optio veniam aspernatur eum quo, ab laudantium amet nulla at dignissimos? Culpa, at?</p>
+
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati, nesciunt error cupiditate nemo illo minima,
+                facere expedita optio veniam aspernatur eum quo,
+                ab laudantium amet nulla at dignissimos? Culpa, at?
+            </p>
+
         </main>
 
     </div>
 
-    <!-- BOTTOM 1x3 -->
+    <!-- =========================================
+            DEVICE BOXES
+    ========================================== -->
+
     <div class="bottom">
-        <a class="box" id="Dev1" href="">Device 1</a>
-        <a class="box" id="Dev2">Device 2</a>
-        <a class="box" id="Dev3">Device 3</a>
+
+        <a class="box" id="Dev1" href="IT_ComputerPage.html">
+            Computer
+        </a>
+
+        <a class="box" id="Dev2" href="IT_PrintersPage.html">
+            Printers
+        </a>
+
+        <a class="box" id="Dev3" href="IT_ChargerPage.html">
+            charger
+        </a>
+
     </div>
 
+    <!-- =========================================
+            QR POPUP
+    ========================================== -->
+
+    <div id="QR-popup" class="hidden">
+
+        <button class="closebtn"
+            onclick="document.getElementById('QR-popup').classList.add('hidden')">
+
+            Close
+
+        </button>
+
+    </div>
+
+    <!-- =========================================
+            JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        function AlertSetting() {
+
+            alert("This is a demo, setting is coming soon!");
+
+            document.getElementById("QR-popup")
+                .classList.remove("hidden");
+
+        }
+
+    </script>
+
 </body>
+
 </html>
